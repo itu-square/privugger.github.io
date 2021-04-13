@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>privugger.Transformer package &mdash; Privugger  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="example.html" />
+    <link rel="prev" title="privugger.Attacker package" href="privugger.Attacker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Privugger
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="privugger.html">privugger Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="privugger.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="privugger.Attacker.html">privugger.Attacker package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">privugger.Transformer package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-privugger.Transformer.annotation_types">privugger.Transformer.annotation_types module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-privugger.Transformer.theano_types">privugger.Transformer.theano_types module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#privugger-transformer-type-decoration-module">privugger.Transformer.type_decoration module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-privugger.Transformer.typed">privugger.Transformer.typed module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-privugger.Transformer">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="privugger.html#module-privugger">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Privugger</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="privugger.html">privugger Documentation</a> &raquo;</li>
+        
+      <li>privugger.Transformer package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/privugger.Transformer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="privugger-transformer-package">
+<h1>privugger.Transformer package<a class="headerlink" href="#privugger-transformer-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-privugger.Transformer.annotation_types">
+<span id="privugger-transformer-annotation-types-module"></span><h2>privugger.Transformer.annotation_types module<a class="headerlink" href="#module-privugger.Transformer.annotation_types" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="privugger.Transformer.annotation_types.Float">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">privugger.Transformer.annotation_types.</span></code><code class="sig-name descname"><span class="pre">Float</span></code><a class="reference internal" href="_modules/privugger/Transformer/annotation_types.html#Float"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#privugger.Transformer.annotation_types.Float" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="privugger.Transformer.annotation_types.Float.a_type">
+<code class="sig-name descname"><span class="pre">a_type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'float'</span></em><a class="headerlink" href="#privugger.Transformer.annotation_types.Float.a_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="privugger.Transformer.annotation_types.Int">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">privugger.Transformer.annotation_types.</span></code><code class="sig-name descname"><span class="pre">Int</span></code><a class="reference internal" href="_modules/privugger/Transformer/annotation_types.html#Int"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#privugger.Transformer.annotation_types.Int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="privugger.Transformer.annotation_types.Int.a_type">
+<code class="sig-name descname"><span class="pre">a_type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'int'</span></em><a class="headerlink" href="#privugger.Transformer.annotation_types.Int.a_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="privugger.Transformer.annotation_types.List">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">privugger.Transformer.annotation_types.</span></code><code class="sig-name descname"><span class="pre">List</span></code><a class="reference internal" href="_modules/privugger/Transformer/annotation_types.html#List"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#privugger.Transformer.annotation_types.List" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="privugger.Transformer.annotation_types.List.a_type">
+<code class="sig-name descname"><span class="pre">a_type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#privugger.Transformer.annotation_types.List.a_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="privugger.Transformer.annotation_types.Tuple">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">privugger.Transformer.annotation_types.</span></code><code class="sig-name descname"><span class="pre">Tuple</span></code><a class="reference internal" href="_modules/privugger/Transformer/annotation_types.html#Tuple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#privugger.Transformer.annotation_types.Tuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="privugger.Transformer.annotation_types.Tuple.a_type">
+<code class="sig-name descname"><span class="pre">a_type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#privugger.Transformer.annotation_types.Tuple.a_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="privugger.Transformer.annotation_types.Tuple.length">
+<code class="sig-name descname"><span class="pre">length</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#privugger.Transformer.annotation_types.Tuple.length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-privugger.Transformer.theano_types">
+<span id="privugger-transformer-theano-types-module"></span><h2>privugger.Transformer.theano_types module<a class="headerlink" href="#module-privugger.Transformer.theano_types" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="privugger.Transformer.theano_types.TheanoToken">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">privugger.Transformer.theano_types.</span></code><code class="sig-name descname"><span class="pre">TheanoToken</span></code><a class="reference internal" href="_modules/privugger/Transformer/theano_types.html#TheanoToken"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#privugger.Transformer.theano_types.TheanoToken" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="privugger.Transformer.theano_types.TheanoToken.float_matrix">
+<code class="sig-name descname"><span class="pre">float_matrix</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'MatrixD'</span></em><a class="headerlink" href="#privugger.Transformer.theano_types.TheanoToken.float_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="privugger.Transformer.theano_types.TheanoToken.float_scalar">
+<code class="sig-name descname"><span class="pre">float_scalar</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'float'</span></em><a class="headerlink" href="#privugger.Transformer.theano_types.TheanoToken.float_scalar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="privugger.Transformer.theano_types.TheanoToken.float_vector">
+<code class="sig-name descname"><span class="pre">float_vector</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'VectorF'</span></em><a class="headerlink" href="#privugger.Transformer.theano_types.TheanoToken.float_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="privugger.Transformer.theano_types.TheanoToken.int_matrix">
+<code class="sig-name descname"><span class="pre">int_matrix</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'MatrixI'</span></em><a class="headerlink" href="#privugger.Transformer.theano_types.TheanoToken.int_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="privugger.Transformer.theano_types.TheanoToken.int_scalar">
+<code class="sig-name descname"><span class="pre">int_scalar</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'int'</span></em><a class="headerlink" href="#privugger.Transformer.theano_types.TheanoToken.int_scalar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="privugger.Transformer.theano_types.TheanoToken.int_vector">
+<code class="sig-name descname"><span class="pre">int_vector</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'VectorI'</span></em><a class="headerlink" href="#privugger.Transformer.theano_types.TheanoToken.int_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="privugger-transformer-type-decoration-module">
+<h2>privugger.Transformer.type_decoration module<a class="headerlink" href="#privugger-transformer-type-decoration-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-privugger.Transformer.typed">
+<span id="privugger-transformer-typed-module"></span><h2>privugger.Transformer.typed module<a class="headerlink" href="#module-privugger.Transformer.typed" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-privugger.Transformer">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-privugger.Transformer" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="example.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="privugger.Attacker.html" class="btn btn-neutral float-left" title="privugger.Attacker package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Raul Pardo, Rasmus Rønneberg, Willard Rafnsson, Andrzej Wasowski &amp; Mathias Jørgensen.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
